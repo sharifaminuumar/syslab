@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SysLab Diagnostics And Wellness Hub — laboratory services, ultrasonography, health packages, patient support, laboratory consultancy and healthcare supplies on Katamanso Amrahia Road.">
+  <meta name="theme-color" content="#f7f9f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <title>SysLab Diagnostics | Healthcare Services</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23064e3b'/%3E%3Cpath d='M16 9v14M9 16h14' stroke='%23fff' stroke-width='3.2' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='8' r='2.6' fill='%23ef4444'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- ==================================================
+     ICON SPRITE (SF Symbols–style line icons)
+================================================== -->
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6.2L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.2V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-ultrasound" viewBox="0 0 24 24"><path d="M8.5 3h7v5a3.5 3.5 0 0 1-7 0z"/><path d="M7 15a7 7 0 0 0 10 0"/><path d="M4.5 18.5a11 11 0 0 0 15 0"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9z"/><path d="M3.5 12h4l1.5-2.5 2.5 5 1.5-2.5h7.5"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 8v6M16 11h6"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 3h6v3H9z"/><path d="M9 11h6M9 15h4"/></symbol>
+    <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M5 21h14"/><path d="M8 21v-1a6.5 6.5 0 0 1 10.5-5.1"/><path d="m9.2 4.3 3.3-1.3 3 7.5-3.3 1.3z"/><path d="M8.5 14h5"/></symbol>
+    <symbol id="i-tubes" viewBox="0 0 24 24"><path d="M6 3h7"/><path d="M7 3v14a2.5 2.5 0 0 0 5 0V3"/><path d="M7 11h5"/><path d="M14 3h7"/><path d="M15 3v10a2.5 2.5 0 0 0 5 0V3"/><path d="M15 8h5"/></symbol>
+    <symbol id="i-kit" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M12 10.5v6M9 13.5h6"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/><path d="M10 21v-3h4v3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7l-4.2 1.3 1.3-4A8 8 0 1 1 20 11.5z"/><path d="M8.5 9.5c.3 2.6 2.4 4.7 5 5l1.2-1.2 1.8.7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0"/><path d="M14.5 10h4M14.5 13.5h3"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.5v.4"/><path d="M12 17v.1"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
+
+<header class="site-header" id="siteHeader">
+
+  <nav class="nav" aria-label="Primary">
+
+    <a class="brand" href="#home" aria-label="SysLab Diagnostics And Wellness Hub, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#064e3b"/>
+        <path d="M16 9v14M9 16h14" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="24" cy="8" r="2.6" fill="#ef4444"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">SysLab</span>
+        <span class="brand-sub">Diagnostics And Wellness Hub</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="navMenu"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#appointment">Appointments</a></li>
+        <li><a href="#help">Ask for Help</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a
+        class="btn btn-wa btn-sm"
+        href="https://wa.me/233209600738"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main id="main">
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero" id="home" aria-labelledby="hero-title">
+
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow">
+        Healthcare <span aria-hidden="true">·</span> Diagnostics <span aria-hidden="true">·</span> Patient Support
+      </p>
+
+      <h1 id="hero-title">
+        Your health depends on early prevention and <span class="accent-text">timely detection.</span>
+      </h1>
+
+      <p class="lede">
+        Access laboratory services, ultrasonography,
+        health packages, patient support, laboratory
+        consultancy and healthcare supplies in one place.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#appointment" class="btn btn-primary btn-lg">
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+          Book Appointment
+        </a>
+
+        <a href="#help" class="btn btn-secondary btn-lg">
+          Ask for Help
+        </a>
+
+        <a
+          href="https://wa.me/233209600738"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost btn-lg"
+        >
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <ul class="pills" aria-label="Popular services">
+        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Hematology &amp; clinical chemistry</a></li>
+        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg>Obstetric ultrasound</a></li>
+        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg>PCR for paternity dispute</a></li>
+        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Corporate screening</a></li>
+      </ul>
+
+    </div>
+
+
+    <aside class="hero-card" aria-labelledby="hero-card-title">
+
+      <div class="hero-card-head">
+        <span class="status-dot" aria-hidden="true"></span>
+        <h2 id="hero-card-title">We're here to help</h2>
+      </div>
+
+      <p class="hero-card-text">
+        Professional diagnostic and healthcare support
+        for patients, healthcare professionals and facilities.
+      </p>
+
+      <ul class="feature-list">
+        <li class="feature">
+          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
+          <span>
+            <strong>Laboratory Services</strong>
+            <small>Reliable diagnostic laboratory testing.</small>
+          </span>
+        </li>
+        <li class="feature">
+          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg></span>
+          <span>
+            <strong>Ultrasonography</strong>
+            <small>Imaging services for clinical assessment.</small>
+          </span>
+        </li>
+        <li class="feature">
+          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg></span>
+          <span>
+            <strong>Patient Support</strong>
+            <small>Assistance when you need it.</small>
+          </span>
+        </li>
+        <li class="feature">
+          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-kit"/></svg></span>
+          <span>
+            <strong>Healthcare Supplies</strong>
+            <small>Equipment, reagents and consumables.</small>
+          </span>
+        </li>
+      </ul>
+
+      <a class="hero-card-foot" href="https://wa.me/233209600738" target="_blank" rel="noopener">
+        <span>
+          <small>WhatsApp</small>
+          <strong>+233 209600738</strong>
+        </span>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     SERVICES
+================================================== -->
+
+<section class="section section-surface" id="services" aria-labelledby="services-title">
+
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="eyebrow">Our Services</p>
+      <h2 id="services-title">Complete Healthcare Support</h2>
+      <p>
+        Explore our diagnostic, imaging, consultancy,
+        patient support and healthcare supply services.
+      </p>
+    </header>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
+          <span class="badge">Diagnostics</span>
+        </div>
+        <h3>Laboratory Services</h3>
+        <p>Professional laboratory investigations for diagnostic and monitoring purposes.</p>
+        <ul class="service-list">
+          <li>Hematology</li>
+          <li>Clinical chemistry</li>
+          <li>Microbiology</li>
+          <li>Parasitology</li>
+          <li>Urinalysis</li>
+          <li>Routine testing</li>
+          <li>PCR for paternity dispute</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg></span>
+          <span class="badge">Imaging</span>
+        </div>
+        <h3>Ultrasonography / Imaging</h3>
+        <p>Imaging services to support clinical evaluation and diagnosis.</p>
+        <ul class="service-list">
+          <li>General ultrasound</li>
+          <li>Abdominal ultrasound</li>
+          <li>Pelvic ultrasound</li>
+          <li>Obstetric ultrasound</li>
+          <li>Thyroid</li>
+          <li>Small parts</li>
+          <li>Other imaging services</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <span class="badge">Wellness</span>
+        </div>
+        <h3>Health Packages</h3>
+        <p>Health screening packages designed for individuals, families and organizations.</p>
+        <ul class="service-list">
+          <li>General health screening</li>
+          <li>Wellness packages</li>
+          <li>Family screening</li>
+          <li>Corporate screening</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg></span>
+          <span class="badge">Care</span>
+        </div>
+        <h3>Patient Support</h3>
+        <p>Friendly support to help patients navigate our services.</p>
+        <ul class="service-list">
+          <li>Appointment assistance</li>
+          <li>Test preparation guidance</li>
+          <li>General enquiries</li>
+          <li>Service information</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+          <span class="badge">Consultancy</span>
+        </div>
+        <h3>Laboratory Consultancy</h3>
+        <p>Professional laboratory consultancy and technical support.</p>
+        <ul class="service-list">
+          <li>Laboratory setup</li>
+          <li>Quality management</li>
+          <li>Workflow support</li>
+          <li>Technical consultation</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg></span>
+          <span class="badge">Supplies</span>
+        </div>
+        <h3>Laboratory Equipment</h3>
+        <p>Supply of equipment for laboratories, hospitals and healthcare facilities.</p>
+        <ul class="service-list">
+          <li>Analyzers</li>
+          <li>Microscopes</li>
+          <li>Centrifuges</li>
+          <li>Laboratory accessories</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
+          <span class="badge">Supplies</span>
+        </div>
+        <h3>Laboratory Reagents</h3>
+        <p>Reagents and testing materials for diagnostic laboratories.</p>
+        <ul class="service-list">
+          <li>Diagnostic reagents</li>
+          <li>Testing kits</li>
+          <li>Laboratory chemicals</li>
+          <li>Testing materials</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-kit"/></svg></span>
+          <span class="badge">Supplies</span>
+        </div>
+        <h3>Hospital Consumables</h3>
+        <p>Essential healthcare consumables for hospitals, clinics and laboratories.</p>
+        <ul class="service-list">
+          <li>Gloves</li>
+          <li>Syringes</li>
+          <li>Sample containers</li>
+          <li>Protective supplies</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+          <span class="badge">Corporate</span>
+        </div>
+        <h3>Corporate Health Services</h3>
+        <p>Health screening and diagnostic support for organizations.</p>
+        <ul class="service-list">
+          <li>Employee screening</li>
+          <li>Corporate packages</li>
+          <li>Health campaigns</li>
+          <li>On-site support</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     APPOINTMENT
+================================================== -->
+
+<section class="section section-tint" id="appointment" aria-labelledby="appointment-title">
+
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="eyebrow">Appointment</p>
+      <h2 id="appointment-title">Book Your Visit</h2>
+      <p>
+        Complete the form and send your appointment
+        request directly to our WhatsApp.
+      </p>
+    </header>
+
+    <div class="appointment-grid">
+
+      <div class="card form-card">
+
+        <h3 class="card-title">Appointment Details</h3>
+
+        <form id="appointmentForm" novalidate>
+
+          <div class="form-grid">
+
+            <div class="field field-static full">
+              <select id="service" required aria-describedby="service-error" data-error="Select the service you'd like to book.">
+                <option value="">Select a service</option>
+                <option>Laboratory Services</option>
+                <option>Ultrasonography / Imaging</option>
+                <option>Health Package</option>
+                <option>Patient Support</option>
+                <option>Laboratory Consultancy</option>
+              </select>
+              <label for="service">Service</label>
+              <p class="field-error" id="service-error"></p>
+            </div>
+
+            <div class="field">
+              <input id="name" type="text" placeholder="Your full name" autocomplete="name" required aria-describedby="name-error" data-error="Enter your full name.">
+              <label for="name">Full Name</label>
+              <p class="field-error" id="name-error"></p>
+            </div>
+
+            <div class="field">
+              <input id="phone" type="tel" placeholder="Your phone number" autocomplete="tel" inputmode="tel" pattern="[0-9+\(\)\s\-]{7,}" required aria-describedby="phone-error" data-error="Enter a phone number we can reach you on.">
+              <label for="phone">Phone Number</label>
+              <p class="field-error" id="phone-error"></p>
+            </div>
+
+            <div class="field full">
+              <input id="email" type="email" placeholder="Your email" autocomplete="email" aria-describedby="email-error">
+              <label for="email">Email <span class="optional">(optional)</span></label>
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <div class="field field-static">
+              <input id="date" type="date" required aria-describedby="date-error" data-error="Choose a date for your visit.">
+              <label for="date">Appointment Date</label>
+              <p class="field-error" id="date-error"></p>
+            </div>
+
+            <div class="field field-static">
+              <select id="time" required aria-describedby="time-error" data-error="Choose a preferred time.">
+                <option value="">Choose time</option>
+                <option>08:00 AM</option>
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>01:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+              </select>
+              <label for="time">Preferred Time</label>
+              <p class="field-error" id="time-error"></p>
+            </div>
+
+            <div class="field full">
+              <textarea id="notes" placeholder="Anything we should know?"></textarea>
+              <label for="notes">Additional Information <span class="optional">(optional)</span></label>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-wa btn-lg btn-block">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Send Appointment via WhatsApp
+          </button>
+
+          <p class="form-status" role="status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
+
+      <aside class="info-panel" aria-labelledby="visit-title">
+
+        <h3 id="visit-title">Before Your Visit</h3>
+
+        <ul class="info-list">
+          <li class="info-item">
+            <span class="info-icon"><svg class="icon" aria-hidden="true"><use href="#i-id"/></svg></span>
+            <span>
+              <strong>Bring identification</strong>
+              <span>Please bring valid identification where required.</span>
+            </span>
+          </li>
+          <li class="info-item">
+            <span class="info-icon"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span>
+            <span>
+              <strong>Check preparation requirements</strong>
+              <span>Some tests may require fasting or other preparation.</span>
+            </span>
+          </li>
+          <li class="info-item">
+            <span class="info-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <span>
+              <strong>Arrive early</strong>
+              <span>Please arrive 10–15 minutes before your appointment.</span>
+            </span>
+          </li>
+          <li class="info-item">
+            <span class="info-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <span>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/233209600738" target="_blank" rel="noopener">+233 209600738</a>
+            </span>
+          </li>
+        </ul>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     PATIENT SUPPORT
+================================================== -->
+
+<section class="section section-surface" id="support" aria-labelledby="support-title">
+
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="eyebrow">Patient Care</p>
+      <h2 id="support-title">Patient Support</h2>
+      <p>
+        We're available to help you understand our services
+        and prepare for your visit.
+      </p>
+    </header>
+
+    <div class="support-grid">
+
+      <article class="support-card">
+        <span class="support-icon"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span>
+        <h3>Test Preparation</h3>
+        <p>Get information about preparing for selected laboratory tests and examinations.</p>
+      </article>
+
+      <article class="support-card">
+        <span class="support-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+        <h3>Appointment Help</h3>
+        <p>Need help choosing a service or arranging an appointment? <a href="#contact">Contact us.</a></p>
+      </article>
+
+      <article class="support-card">
+        <span class="support-icon"><svg class="icon" aria-hidden="true"><use href="#i-question"/></svg></span>
+        <h3>General Enquiries</h3>
+        <p>Ask questions about our laboratory, imaging and healthcare services.</p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     ASK FOR HELP
+================================================== -->
+
+<section class="section section-tint" id="help" aria-labelledby="help-title">
+
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="eyebrow">Need Assistance?</p>
+      <h2 id="help-title">Ask for Help</h2>
+      <p>Send your question directly to our WhatsApp.</p>
+    </header>
+
+    <div class="help-container">
+
+      <div class="card form-card">
+
+        <form id="helpForm" novalidate>
+
+          <div class="form-grid">
+
+            <div class="field">
+              <input id="helpName" type="text" placeholder="Your name" autocomplete="name" required aria-describedby="helpName-error" data-error="Enter your name.">
+              <label for="helpName">Your Name</label>
+              <p class="field-error" id="helpName-error"></p>
+            </div>
+
+            <div class="field">
+              <input id="helpPhone" type="tel" placeholder="Your phone number" autocomplete="tel" inputmode="tel" pattern="[0-9+\(\)\s\-]{7,}" required aria-describedby="helpPhone-error" data-error="Enter a phone number we can reach you on.">
+              <label for="helpPhone">Phone Number</label>
+              <p class="field-error" id="helpPhone-error"></p>
+            </div>
+
+            <div class="field field-static full">
+              <select id="helpTopic" required aria-describedby="helpTopic-error" data-error="Choose what you need help with.">
+                <option value="">Select an option</option>
+                <option>Laboratory Services</option>
+                <option>Ultrasonography / Imaging</option>
+                <option>Health Packages</option>
+                <option>Patient Support</option>
+                <option>Laboratory Consultancy</option>
+                <option>Equipment / Reagents</option>
+                <option>Hospital Consumables</option>
+                <option>Other</option>
+              </select>
+              <label for="helpTopic">What do you need help with?</label>
+              <p class="field-error" id="helpTopic-error"></p>
+            </div>
+
+            <div class="field full">
+              <textarea id="helpMessage" placeholder="Write your message here..." required aria-describedby="helpMessage-error" data-error="Write a short message so we know how to help."></textarea>
+              <label for="helpMessage">Your Message</label>
+              <p class="field-error" id="helpMessage-error"></p>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-wa btn-lg btn-block">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Send Message via WhatsApp
+          </button>
+
+          <p class="form-status" role="status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
+<section class="section section-surface" id="contact" aria-labelledby="contact-title">
+
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="eyebrow">Contact Us</p>
+      <h2 id="contact-title">We're Here to Help</h2>
+      <p>
+        Contact us for appointments, enquiries,
+        consultancy and healthcare supplies.
+      </p>
+    </header>
+
+    <div class="contact-grid">
+
+      <article class="contact-card">
+        <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+        <h3>WhatsApp</h3>
+        <p>+233 209600738</p>
+        <a href="https://wa.me/233209600738" target="_blank" rel="noopener" class="btn btn-wa">
+          Chat With Us
+        </a>
+      </article>
+
+      <article class="contact-card">
+        <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+        <h3>Email</h3>
+        <p>ricus74@yahoo.com</p>
+        <a href="mailto:ricus74@yahoo.com" class="btn btn-secondary">
+          Send an Email
+        </a>
+      </article>
+
+      <article class="contact-card">
+        <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <h3>Location</h3>
+        <p>Katamanso Amrahia Road</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Katamanso%20Amrahia%20Road" target="_blank" rel="noopener" class="btn btn-secondary">
+          Open in Maps
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="#10b981" fill-opacity=".16"/>
+        <path d="M16 9v14M9 16h14" stroke="#6ee7b7" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="24" cy="8" r="2.6" fill="#f87171"/>
+      </svg>
+      <div>
+        <p class="footer-name">SysLab Diagnostics And Wellness Hub.</p>
+        <p>Quality diagnostics. Better healthcare.</p>
+      </div>
+    </div>
+
+    <ul class="footer-contact">
+      <li><a href="https://wa.me/233209600738" target="_blank" rel="noopener">WhatsApp: +233 209600738</a></li>
+      <li><a href="mailto:ricus74@yahoo.com">ricus74@yahoo.com</a></li>
+      <li>Katamanso Amrahia Road</li>
+    </ul>
+
+  </div>
+
+  <p class="footer-legal">© 2026 SysLab Diagnostics. All rights reserved.</p>
+
+</footer>
+
+
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
