@@ -120,6 +120,12 @@
 
 <section class="hero" id="home" aria-labelledby="hero-title">
 
+  <div class="hero-ambient" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
   <div class="hero-inner">
 
     <div class="hero-copy">
@@ -172,7 +178,7 @@
     <aside class="hero-card" aria-labelledby="hero-card-title">
 
       <figure class="photo photo-hero">
-        <img src="https://unsplash.com/photos/6q2bK2x5pGw/download?w=960" srcset="https://unsplash.com/photos/6q2bK2x5pGw/download?w=640 640w, https://unsplash.com/photos/6q2bK2x5pGw/download?w=960 960w, https://unsplash.com/photos/6q2bK2x5pGw/download?w=1440 1440w" sizes="(max-width: 1040px) 92vw, 460px" width="1440" height="960" alt="Laboratory scientist in a white coat handling test tubes at a diagnostic workbench" fetchpriority="high" decoding="async">
+        <img src="assets/photos/hero-lab-960.jpg" srcset="assets/photos/hero-lab-640.jpg 640w, assets/photos/hero-lab-960.jpg 960w, assets/photos/hero-lab-1280.jpg 1280w" sizes="(max-width: 1040px) 92vw, 460px" width="1280" height="800" alt="Laboratory technician using a micropipette to transfer a sample into tubes held in a rack on a clean bench" fetchpriority="high" decoding="async">
         <figcaption class="photo-chip">
           <svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>
           Diagnostic laboratory
@@ -259,7 +265,7 @@
 
       <article class="service-card service-card-media">
         <figure class="photo photo-service">
-          <img src="https://unsplash.com/photos/lgkareDEqKg/download?w=800" srcset="https://unsplash.com/photos/lgkareDEqKg/download?w=480 480w, https://unsplash.com/photos/lgkareDEqKg/download?w=800 800w, https://unsplash.com/photos/lgkareDEqKg/download?w=1200 1200w" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 380px" width="1440" height="960" alt="Laboratory technician using a micropipette to prepare samples in test tubes" loading="lazy" decoding="async">
+          <img src="assets/photos/service-lab-800.jpg" srcset="assets/photos/service-lab-480.jpg 480w, assets/photos/service-lab-800.jpg 800w, assets/photos/service-lab-1200.jpg 1200w" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 380px" width="1200" height="674" alt="Overhead view of a technician pipetting samples into microcentrifuge tubes beside a tip box" loading="lazy" decoding="async">
         </figure>
         <div class="service-top">
           <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
@@ -278,10 +284,7 @@
         </ul>
       </article>
 
-      <article class="service-card service-card-media">
-        <figure class="photo photo-service">
-          <img src="https://unsplash.com/photos/CPQpqBKYGUE/download?w=800" srcset="https://unsplash.com/photos/CPQpqBKYGUE/download?w=480 480w, https://unsplash.com/photos/CPQpqBKYGUE/download?w=800 800w, https://unsplash.com/photos/CPQpqBKYGUE/download?w=1200 1200w" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 380px" width="1440" height="960" alt="Clinician performing an ultrasound examination on a patient in a clinic" loading="lazy" decoding="async">
-        </figure>
+      <article class="service-card">
         <div class="service-top">
           <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg></span>
           <span class="badge">Imaging</span>
@@ -299,10 +302,7 @@
         </ul>
       </article>
 
-      <article class="service-card service-card-media">
-        <figure class="photo photo-service">
-          <img src="https://unsplash.com/photos/lDH1fxwguxw/download?w=800" srcset="https://unsplash.com/photos/lDH1fxwguxw/download?w=480 480w, https://unsplash.com/photos/lDH1fxwguxw/download?w=800 800w, https://unsplash.com/photos/lDH1fxwguxw/download?w=1200 1200w" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 380px" width="1440" height="960" alt="Doctor using a stethoscope during a patient health check-up" loading="lazy" decoding="async">
-        </figure>
+      <article class="service-card">
         <div class="service-top">
           <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
           <span class="badge">Wellness</span>
@@ -517,7 +517,7 @@
 
 <!-- ==================================================
      ABOUT / FACILITY
-     Illustrative stock photography (Unsplash License).
+     Illustrative stock photography stored in assets/photos/.
      Replace with photos of the SysLab team and facility when available.
 ================================================== -->
 
@@ -551,22 +551,14 @@
       </ul>
     </div>
 
-    <div class="gallery">
-      <figure class="photo gallery-item gallery-lead">
-        <img src="https://unsplash.com/photos/VBc585wocEs/download?w=960" srcset="https://unsplash.com/photos/VBc585wocEs/download?w=640 640w, https://unsplash.com/photos/VBc585wocEs/download?w=960 960w, https://unsplash.com/photos/VBc585wocEs/download?w=1440 1440w" sizes="(max-width: 760px) 92vw, 600px" width="1440" height="960" alt="Laboratory professional in a white coat examining a sample through a microscope" loading="lazy" decoding="async">
-        <figcaption>Microscopy</figcaption>
-      </figure>
+    <div class="gallery gallery-duo">
       <figure class="photo gallery-item">
-        <img src="https://unsplash.com/photos/IFpQtennlj8/download?w=800" srcset="https://unsplash.com/photos/IFpQtennlj8/download?w=480 480w, https://unsplash.com/photos/IFpQtennlj8/download?w=800 800w, https://unsplash.com/photos/IFpQtennlj8/download?w=1200 1200w" sizes="(max-width: 760px) 92vw, 300px" width="1440" height="960" alt="Gloved hand using a glass pipette to transfer liquid into a sample vial" loading="lazy" decoding="async">
+        <img src="assets/photos/about-pipette-960.jpg" srcset="assets/photos/about-pipette-640.jpg 640w, assets/photos/about-pipette-960.jpg 960w, assets/photos/about-pipette-1440.jpg 1440w" sizes="(max-width: 760px) 92vw, 560px" width="1440" height="960" alt="Gloved hand releasing a drop from a glass pipette into a sample vial" loading="lazy" decoding="async">
         <figcaption>Sample preparation</figcaption>
       </figure>
       <figure class="photo gallery-item">
-        <img src="https://unsplash.com/photos/z_w9KovAwYk/download?w=800" srcset="https://unsplash.com/photos/z_w9KovAwYk/download?w=480 480w, https://unsplash.com/photos/z_w9KovAwYk/download?w=800 800w, https://unsplash.com/photos/z_w9KovAwYk/download?w=1200 1200w" sizes="(max-width: 760px) 92vw, 300px" width="1440" height="960" alt="Laboratory bench with diagnostic instruments and glassware" loading="lazy" decoding="async">
-        <figcaption>Laboratory instruments</figcaption>
-      </figure>
-      <figure class="photo gallery-item gallery-wide">
-        <img src="https://unsplash.com/photos/yVbZBg3iEDQ/download?w=960" srcset="https://unsplash.com/photos/yVbZBg3iEDQ/download?w=640 640w, https://unsplash.com/photos/yVbZBg3iEDQ/download?w=960 960w, https://unsplash.com/photos/yVbZBg3iEDQ/download?w=1440 1440w" sizes="(max-width: 760px) 92vw, 600px" width="1440" height="960" alt="Scientist in a white lab coat working at a microscope in a laboratory" loading="lazy" decoding="async">
-        <figcaption>Clinical testing</figcaption>
+        <img src="assets/photos/about-bench-960.jpg" srcset="assets/photos/about-bench-640.jpg 640w, assets/photos/about-bench-960.jpg 960w, assets/photos/about-bench-1440.jpg 1440w" sizes="(max-width: 760px) 92vw, 560px" width="1440" height="960" alt="Laboratory bench set up with reagent bottles, micropipettes and sample tubes" loading="lazy" decoding="async">
+        <figcaption>Laboratory bench</figcaption>
       </figure>
     </div>
 

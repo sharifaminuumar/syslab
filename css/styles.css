@@ -1589,6 +1589,101 @@ form .btn-block { margin-top: 24px; }
 
 
 /* =========================
+   HERO AMBIENT BACKGROUND
+   Premium motion: slow, linear-feeling drift of soft colour fields.
+   Transform-only, three layers on unsynchronised cycles (26s / 34s / 41s)
+   so the movement never repeats noticeably. Text sits on the light base;
+   orbs stay low-alpha so contrast holds at every frame.
+========================== */
+
+.hero-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 62vmax;
+  height: 62vmax;
+  top: -28vmax;
+  right: -18vmax;
+  background: radial-gradient(closest-side, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0));
+  animation: orb-drift-1 26s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 48vmax;
+  height: 48vmax;
+  bottom: -26vmax;
+  left: -16vmax;
+  background: radial-gradient(closest-side, rgba(110, 231, 183, 0.24), rgba(110, 231, 183, 0));
+  animation: orb-drift-2 34s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+  width: 38vmax;
+  height: 38vmax;
+  bottom: -14vmax;
+  right: 8vmax;
+  background: radial-gradient(closest-side, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0));
+  animation: orb-drift-3 41s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift-1 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-9vmax, 6vmax, 0) scale(1.08); }
+}
+
+@keyframes orb-drift-2 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(10vmax, -5vmax, 0) scale(1.1); }
+}
+
+@keyframes orb-drift-3 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-7vmax, -8vmax, 0) scale(0.92); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .orb-1 { background: radial-gradient(closest-side, rgba(16, 185, 129, 0.16), rgba(16, 185, 129, 0)); }
+  .orb-2 { background: radial-gradient(closest-side, rgba(5, 150, 105, 0.14), rgba(5, 150, 105, 0)); }
+  .orb-3 { background: radial-gradient(closest-side, rgba(239, 68, 68, 0.06), rgba(239, 68, 68, 0)); }
+}
+
+/* Motion is decorative: stop it entirely, keep the static colour fields */
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none !important;
+    will-change: auto;
+  }
+}
+
+/* Two-photo About grid */
+.gallery-duo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+}
+
+.gallery-duo .gallery-item {
+  aspect-ratio: 3 / 2;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .gallery-duo { grid-template-columns: minmax(0, 1fr); }
+  .gallery-duo .gallery-item { aspect-ratio: 3 / 2; }
+}
+
+
+/* =========================
    REVEAL ON SCROLL (progressive)
 ========================== */
 
