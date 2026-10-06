@@ -68,7 +68,7 @@ Every request goes straight to the clinic's WhatsApp, so no back-end, database o
 - **Responsive layout.** Fluid type and spacing, CSS Grid layouts that reflow from three columns to one, and a mobile menu on screens of 1040px and narrower. Tested at 1440px and 390px with no horizontal scrolling.
 - **Native dark mode.** A complete second set of colour tokens follows the visitor's system setting automatically, with no toggle to manage.
 - **Brand presence.** The SLD logo appears in the navigation, hero card and footer, and as the favicon and Apple touch icon.
-- **Clinical photography.** Six self-hosted photos: the hero card, the Laboratory Services, Ultrasonography and Patient Support cards, and a two-photo About grid. Each is served in three sizes, so phones download only what they need (16–101 KB per file).
+- **Clinical photography.** Nine self-hosted photos: the hero card, all six service cards, and a two-photo About grid. Each is served in three sizes, so phones download only what they need (16–101 KB per file).
 - **Ambient hero background.** Slow-drifting colour fields in the brand palette give the hero a quiet sense of life. The motion respects reduced-motion settings, can be paused, and stops while off screen.
 - **Service detail popups.** The four quick-link pills under the hero headline open an accessible popup with a summary, a "What's included" checklist and two actions.
   - **Book Appointment** jumps to the form with the matching service already selected.
@@ -150,6 +150,9 @@ syslab/
 │       ├── service-lab-{480,800,1200}.jpg
 │       ├── service-ultrasound-{480,800,1200}.jpg
 │       ├── service-support-{480,800,1200}.jpg
+│       ├── service-wellness-{480,800,1200}.jpg
+│       ├── service-consultancy-{480,800,1200}.jpg
+│       ├── service-corporate-{480,800,1200}.jpg
 │       ├── about-pipette-{640,960,1440}.jpg
 │       └── about-bench-{640,960,1440}.jpg
 └── README.md
