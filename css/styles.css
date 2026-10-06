@@ -1590,10 +1590,19 @@ form .btn-block { margin-top: 24px; }
 
 /* =========================
    HERO AMBIENT BACKGROUND
-   Premium motion: slow, linear-feeling drift of soft colour fields.
-   Transform-only, three layers on unsynchronised cycles (26s / 34s / 41s)
-   so the movement never repeats noticeably. Text sits on the light base;
-   orbs stay low-alpha so contrast holds at every frame.
+   Guided by the motion-design skill (LottieFiles), "Premium" archetype:
+   - Ambient layer only: imperceptible at a glance, never competes with
+     the headline (ambient energy well under 20% of primary motion).
+   - Gradient-field drift on 26-41s cycles, sine-like ease-in-out
+     (no linear easing on spatial movement); unsynchronised durations
+     so the pattern never visibly repeats.
+   - Transform + opacity only, 5 layers (< 20 animated elements).
+   - Static by default; motion is opt-in under
+     prefers-reduced-motion: no-preference, pausable, and paused while
+     the hero is off screen.
+   Brand palette: deep emerald #064e3b, emerald #10b981, ambient sage
+   #f0fdf4, with a trace of the red accent. Fields stay low-alpha so
+   hero text keeps WCAG AA contrast at every frame.
 ========================== */
 
 .hero-ambient {
@@ -1607,62 +1616,126 @@ form .btn-block { margin-top: 24px; }
 .orb {
   position: absolute;
   border-radius: 50%;
-  will-change: transform;
 }
 
+/* Emerald glow, top right */
 .orb-1 {
-  width: 62vmax;
-  height: 62vmax;
-  top: -28vmax;
-  right: -18vmax;
-  background: radial-gradient(closest-side, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0));
-  animation: orb-drift-1 26s ease-in-out infinite alternate;
+  width: 64vmax;
+  height: 64vmax;
+  top: -30vmax;
+  right: -20vmax;
+  background: radial-gradient(closest-side, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0));
 }
 
+/* Deep emerald depth, bottom left */
 .orb-2 {
-  width: 48vmax;
-  height: 48vmax;
-  bottom: -26vmax;
-  left: -16vmax;
-  background: radial-gradient(closest-side, rgba(110, 231, 183, 0.24), rgba(110, 231, 183, 0));
-  animation: orb-drift-2 34s ease-in-out infinite alternate;
+  width: 54vmax;
+  height: 54vmax;
+  bottom: -30vmax;
+  left: -18vmax;
+  background: radial-gradient(closest-side, rgba(6, 78, 59, 0.1), rgba(6, 78, 59, 0));
 }
 
+/* Ambient sage sheen behind the copy (lifts contrast, never lowers it) */
 .orb-3 {
-  width: 38vmax;
-  height: 38vmax;
-  bottom: -14vmax;
-  right: 8vmax;
-  background: radial-gradient(closest-side, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0));
-  animation: orb-drift-3 41s ease-in-out infinite alternate;
+  width: 46vmax;
+  height: 46vmax;
+  top: 6vmax;
+  left: -6vmax;
+  background: radial-gradient(closest-side, rgba(240, 253, 244, 0.95), rgba(240, 253, 244, 0));
 }
 
-@keyframes orb-drift-1 {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(-9vmax, 6vmax, 0) scale(1.08); }
+/* Mint highlight drifting through the middle */
+.orb-4 {
+  width: 34vmax;
+  height: 34vmax;
+  top: 18vmax;
+  right: 22vmax;
+  background: radial-gradient(closest-side, rgba(110, 231, 183, 0.16), rgba(110, 231, 183, 0));
 }
 
-@keyframes orb-drift-2 {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(10vmax, -5vmax, 0) scale(1.1); }
-}
-
-@keyframes orb-drift-3 {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(-7vmax, -8vmax, 0) scale(0.92); }
+/* Trace of the brand red, bottom right */
+.orb-5 {
+  width: 36vmax;
+  height: 36vmax;
+  bottom: -16vmax;
+  right: 4vmax;
+  background: radial-gradient(closest-side, rgba(239, 68, 68, 0.07), rgba(239, 68, 68, 0));
 }
 
 @media (prefers-color-scheme: dark) {
-  .orb-1 { background: radial-gradient(closest-side, rgba(16, 185, 129, 0.16), rgba(16, 185, 129, 0)); }
-  .orb-2 { background: radial-gradient(closest-side, rgba(5, 150, 105, 0.14), rgba(5, 150, 105, 0)); }
-  .orb-3 { background: radial-gradient(closest-side, rgba(239, 68, 68, 0.06), rgba(239, 68, 68, 0)); }
+  .orb-1 { background: radial-gradient(closest-side, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0)); }
+  .orb-2 { background: radial-gradient(closest-side, rgba(6, 78, 59, 0.55), rgba(6, 78, 59, 0)); }
+  .orb-3 { background: radial-gradient(closest-side, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0)); }
+  .orb-4 { background: radial-gradient(closest-side, rgba(110, 231, 183, 0.07), rgba(110, 231, 183, 0)); }
+  .orb-5 { background: radial-gradient(closest-side, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0)); }
 }
 
-/* Motion is decorative: stop it entirely, keep the static colour fields */
-@media (prefers-reduced-motion: reduce) {
-  .orb {
-    animation: none !important;
-    will-change: auto;
+/* Pause control: only rendered when there is motion to pause */
+.motion-toggle {
+  display: none;
+  position: absolute;
+  right: var(--gutter);
+  bottom: 16px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-2);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.motion-toggle:hover { color: var(--brand-ink); border-color: var(--brand-600); }
+.motion-toggle:focus-visible { outline: none; box-shadow: var(--focus); }
+.motion-toggle .icon { width: 18px; height: 18px; }
+.motion-toggle .icon-play { display: none; }
+.motion-toggle[aria-pressed="true"] .icon-pause { display: none; }
+.motion-toggle[aria-pressed="true"] .icon-play { display: block; }
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .orb { will-change: transform; }
+
+  .orb-1 { animation: orb-drift-1 26s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+  .orb-2 { animation: orb-drift-2 34s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+  .orb-3 { animation: orb-breathe 14s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+  .orb-4 { animation: orb-drift-4 29s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+  .orb-5 { animation: orb-drift-5 41s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+
+  .hero.is-paused .orb,
+  .hero.is-offscreen .orb { animation-play-state: paused; }
+
+  .motion-toggle { display: inline-flex; }
+
+  @keyframes orb-drift-1 {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(-9vmax, 6vmax, 0) scale(1.08); }
+  }
+
+  @keyframes orb-drift-2 {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(10vmax, -5vmax, 0) scale(1.1); }
+  }
+
+  @keyframes orb-breathe {
+    from { opacity: 0.75; transform: scale(0.97); }
+    to   { opacity: 1;    transform: scale(1.03); }
+  }
+
+  @keyframes orb-drift-4 {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(-8vmax, -6vmax, 0) scale(1.12); }
+  }
+
+  @keyframes orb-drift-5 {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(-7vmax, -8vmax, 0) scale(0.92); }
   }
 }
 

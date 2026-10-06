@@ -53,6 +53,8 @@
     <symbol id="i-glove" viewBox="0 0 24 24"><path d="M8 21v-4.5L5.2 12.6a1.6 1.6 0 0 1 2.6-1.8L9 12.3V5.5a1.3 1.3 0 0 1 2.6 0V11"/><path d="M11.6 10V4.3a1.3 1.3 0 0 1 2.6 0V11"/><path d="M14.2 10V5.3a1.3 1.3 0 0 1 2.6 0V11"/><path d="M16.8 10V7.3a1.3 1.3 0 0 1 2.6 0V15a6 6 0 0 1-3 5.2V21"/></symbol>
     <symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4M20 4l-3.5 3.5"/><path d="m15 5 4 4-9.5 9.5H5.5v-4z"/><path d="M5.5 18.5 2 22"/><path d="m9.5 10.5 2 2M12 8l2 2"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 3 8 7 9.5 4-1.5 7-5.2 7-9.5V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
   </defs>
 </svg>
 
@@ -124,7 +126,14 @@
     <span class="orb orb-1"></span>
     <span class="orb orb-2"></span>
     <span class="orb orb-3"></span>
+    <span class="orb orb-4"></span>
+    <span class="orb orb-5"></span>
   </div>
+
+  <button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause background animation">
+    <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+    <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+  </button>
 
   <div class="hero-inner">
 

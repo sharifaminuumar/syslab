@@ -469,3 +469,46 @@ document.querySelectorAll(".photo img").forEach(function(img) {
     img.addEventListener("error", failed, { once: true });
   }
 });
+
+
+/*
+======================================================
+HERO BACKGROUND MOTION
+======================================================
+
+Pause control for the ambient background (WCAG 2.2.2),
+remembered per visitor, plus an automatic pause while
+the hero is off screen to save battery.
+*/
+
+(function() {
+
+  const hero = document.querySelector(".hero");
+  const toggle = hero && hero.querySelector(".motion-toggle");
+
+  if (!toggle) return;
+
+  function setPaused(paused) {
+    hero.classList.toggle("is-paused", paused);
+    toggle.setAttribute("aria-pressed", String(paused));
+    toggle.setAttribute(
+      "aria-label",
+      paused ? "Play background animation" : "Pause background animation"
+    );
+    try { localStorage.setItem("syslab-motion-paused", paused ? "1" : "0"); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem("syslab-motion-paused"); } catch (e) {}
+  if (saved === "1") setPaused(true);
+
+  toggle.addEventListener("click", function() {
+    setPaused(!hero.classList.contains("is-paused"));
+  });
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(entries) {
+      hero.classList.toggle("is-offscreen", !entries[0].isIntersecting);
+    }).observe(hero);
+  }
+})();
