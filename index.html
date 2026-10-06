@@ -45,6 +45,14 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-analyzer" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><rect x="7" y="7" width="10" height="5" rx="1"/><path d="M7 16h2M11 16h2"/><circle cx="16.5" cy="16" r="0.6"/></symbol>
+    <symbol id="i-centrifuge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 6.5v2M12 15.5v2M6.5 12h2M15.5 12h2"/></symbol>
+    <symbol id="i-rack" viewBox="0 0 24 24"><path d="M3 10h18M4 20h16"/><path d="M6.5 6v10a1.5 1.5 0 0 0 3 0V6M14.5 6v10a1.5 1.5 0 0 0 3 0V6"/><path d="M5.5 6h5M13.5 6h5"/></symbol>
+    <symbol id="i-strip" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="19" rx="1.5"/><path d="M9 7h6M9 11h6M9 15h6"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M9.5 3h5M10.5 3v4L7 10.5V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8.5L13.5 7V3"/><path d="M7 14h10"/></symbol>
+    <symbol id="i-glove" viewBox="0 0 24 24"><path d="M8 21v-4.5L5.2 12.6a1.6 1.6 0 0 1 2.6-1.8L9 12.3V5.5a1.3 1.3 0 0 1 2.6 0V11"/><path d="M11.6 10V4.3a1.3 1.3 0 0 1 2.6 0V11"/><path d="M14.2 10V5.3a1.3 1.3 0 0 1 2.6 0V11"/><path d="M16.8 10V7.3a1.3 1.3 0 0 1 2.6 0V15a6 6 0 0 1-3 5.2V21"/></symbol>
+    <symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4M20 4l-3.5 3.5"/><path d="m15 5 4 4-9.5 9.5H5.5v-4z"/><path d="M5.5 18.5 2 22"/><path d="m9.5 10.5 2 2M12 8l2 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 3 8 7 9.5 4-1.5 7-5.2 7-9.5V6z"/><path d="m9 12 2 2 4-4"/></symbol>
   </defs>
 </svg>
 
@@ -341,51 +349,6 @@
 
       <article class="service-card">
         <div class="service-top">
-          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg></span>
-          <span class="badge">Supplies</span>
-        </div>
-        <h3>Laboratory Equipment</h3>
-        <p>Supply of equipment for laboratories, hospitals and healthcare facilities.</p>
-        <ul class="service-list">
-          <li>Analyzers</li>
-          <li>Microscopes</li>
-          <li>Centrifuges</li>
-          <li>Laboratory accessories</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top">
-          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
-          <span class="badge">Supplies</span>
-        </div>
-        <h3>Laboratory Reagents</h3>
-        <p>Reagents and testing materials for diagnostic laboratories.</p>
-        <ul class="service-list">
-          <li>Diagnostic reagents</li>
-          <li>Testing kits</li>
-          <li>Laboratory chemicals</li>
-          <li>Testing materials</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top">
-          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-kit"/></svg></span>
-          <span class="badge">Supplies</span>
-        </div>
-        <h3>Hospital Consumables</h3>
-        <p>Essential healthcare consumables for hospitals, clinics and laboratories.</p>
-        <ul class="service-list">
-          <li>Gloves</li>
-          <li>Syringes</li>
-          <li>Sample containers</li>
-          <li>Protective supplies</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top">
           <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
           <span class="badge">Corporate</span>
         </div>
@@ -400,6 +363,152 @@
       </article>
 
     </div>
+
+    <section class="supplies" aria-labelledby="supplies-title">
+
+      <header class="supplies-heading">
+        <span class="badge">Supplies</span>
+        <h3 id="supplies-title">Equipment &amp; Supplies</h3>
+        <p>What each category covers and how it is used in clinical and laboratory settings.</p>
+      </header>
+
+      <div class="supply-grid">
+
+      <article class="supply-card">
+        <header class="supply-head">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg></span>
+          <div>
+            <h3>Laboratory Equipment</h3>
+            <p>Supply of equipment for laboratories, hospitals and healthcare facilities.</p>
+          </div>
+        </header>
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-analyzer"/></svg></span>
+            <div>
+              <h4>Analyzers</h4>
+              <p>Automated hematology and clinical chemistry systems for complete blood counts and metabolic, liver, kidney and lipid panels. Batch processing and built-in quality-control tracking support consistent results at high daily volumes.</p>
+              <ul class="spec-tags" aria-label="Analyzers highlights"><li>Hematology</li><li>Clinical chemistry</li><li>QC tracking</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg></span>
+            <div>
+              <h4>Microscopes</h4>
+              <p>Compound light microscopes for blood film review, parasitology and urine sediment examination, with oil-immersion objectives for fine cellular detail and even LED illumination.</p>
+              <ul class="spec-tags" aria-label="Microscopes highlights"><li>Blood films</li><li>Parasitology</li><li>Oil immersion</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-centrifuge"/></svg></span>
+            <div>
+              <h4>Centrifuges</h4>
+              <p>Benchtop centrifuges that separate serum and plasma and concentrate urine sediment ahead of analysis. Interchangeable rotors fit common tube sizes, with imbalance detection and lid-lock safety.</p>
+              <ul class="spec-tags" aria-label="Centrifuges highlights"><li>Serum &amp; plasma</li><li>Multiple tube sizes</li><li>Lid-lock safety</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-rack"/></svg></span>
+            <div>
+              <h4>Laboratory accessories</h4>
+              <p>Pipettes, tube racks, mixers, timers and sample storage that keep daily bench workflow organised, traceable and repeatable.</p>
+              <ul class="spec-tags" aria-label="Laboratory accessories highlights"><li>Pipettes</li><li>Racks &amp; storage</li><li>Workflow</li></ul>
+            </div>
+          </li>
+        </ul>
+      </article>
+      <article class="supply-card">
+        <header class="supply-head">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
+          <div>
+            <h3>Laboratory Reagents</h3>
+            <p>Reagents and testing materials for diagnostic laboratories.</p>
+          </div>
+        </header>
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
+            <div>
+              <h4>Diagnostic reagents</h4>
+              <p>Analyzer-compatible reagents, calibrators and controls for routine chemistry and hematology testing. Each lot is traceable by lot number and expiry date and kept within the manufacturer’s storage conditions, including cold chain where required.</p>
+              <ul class="spec-tags" aria-label="Diagnostic reagents highlights"><li>Calibrators</li><li>Controls</li><li>Lot traceable</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-strip"/></svg></span>
+            <div>
+              <h4>Testing kits</h4>
+              <p>Rapid diagnostic tests and laboratory immunoassay kits for infectious disease screening, pregnancy testing and other point-of-care or laboratory use.</p>
+              <ul class="spec-tags" aria-label="Testing kits highlights"><li>Rapid tests</li><li>Immunoassays</li><li>Point of care</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-bottle"/></svg></span>
+            <div>
+              <h4>Laboratory chemicals</h4>
+              <p>Stains, fixatives, buffers and cleaning solutions for microscopy, sample preparation and instrument maintenance.</p>
+              <ul class="spec-tags" aria-label="Laboratory chemicals highlights"><li>Stains</li><li>Buffers</li><li>Fixatives</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
+            <div>
+              <h4>Testing materials</h4>
+              <p>Glass slides, cover slips, urine test strips and quality-control materials that support accurate manual and automated testing.</p>
+              <ul class="spec-tags" aria-label="Testing materials highlights"><li>Slides</li><li>Test strips</li><li>QC materials</li></ul>
+            </div>
+          </li>
+        </ul>
+      </article>
+      <article class="supply-card">
+        <header class="supply-head">
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-kit"/></svg></span>
+          <div>
+            <h3>Hospital Consumables</h3>
+            <p>Essential healthcare consumables for hospitals, clinics and laboratories.</p>
+          </div>
+        </header>
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-glove"/></svg></span>
+            <div>
+              <h4>Gloves</h4>
+              <p>Disposable examination gloves in nitrile and latex, including powder-free options, for patient care and safe specimen handling.</p>
+              <ul class="spec-tags" aria-label="Gloves highlights"><li>Nitrile</li><li>Latex</li><li>Powder-free</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-syringe"/></svg></span>
+            <div>
+              <h4>Syringes</h4>
+              <p>Sterile, single-use syringes and needles in common volumes for injections and blood collection.</p>
+              <ul class="spec-tags" aria-label="Syringes highlights"><li>Sterile</li><li>Single-use</li><li>Common volumes</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
+            <div>
+              <h4>Sample containers</h4>
+              <p>Colour-coded blood collection tubes with the appropriate additive for each test, plus urine and stool containers and swabs for reliable specimen collection and transport.</p>
+              <ul class="spec-tags" aria-label="Sample containers highlights"><li>Blood tubes</li><li>Urine &amp; stool</li><li>Swabs</li></ul>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <div>
+              <h4>Protective supplies</h4>
+              <p>Face masks, gowns, caps, shoe covers and sharps containers that support infection prevention for staff and patients.</p>
+              <ul class="spec-tags" aria-label="Protective supplies highlights"><li>Masks &amp; gowns</li><li>Sharps safety</li><li>Infection control</li></ul>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      </div>
+
+      <p class="supplies-note">Specifications vary by manufacturer and product. <a href="#help">Ask us</a> for current stock and product details.</p>
+
+    </section>
 
   </div>
 
