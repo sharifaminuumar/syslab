@@ -128,7 +128,7 @@ syslab/
 │   ├── icon-180.png    # Apple touch icon
 │   ├── favicon-64.png  # Browser favicon
 │   └── photos/         # Optimised JPEGs, three widths each
-│       ├── hero-lab-{640,960,1280}.jpg
+│       ├── hero-microscope-{640,960,1280}.jpg
 │       ├── service-lab-{480,800,1200}.jpg
 │       ├── service-ultrasound-{480,800,1200}.jpg
 │       ├── service-wellness-{480,800,1200}.jpg

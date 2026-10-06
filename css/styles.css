@@ -1483,6 +1483,9 @@ form .btn-block { margin-top: 24px; }
 
 .photo-chip .icon { width: 16px; height: 16px; }
 
+/* Keep the label clear of the microscope, the subject of the hero photo */
+.photo-hero .photo-chip { top: 12px; bottom: auto; }
+
 /* Service card banners */
 .photo-service {
   aspect-ratio: 16 / 9;
