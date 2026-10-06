@@ -512,3 +512,172 @@ the hero is off screen to save battery.
     }).observe(hero);
   }
 })();
+
+
+/*
+======================================================
+SERVICE DETAIL MODAL
+======================================================
+
+The hero pills stay plain links to #services (works
+without JavaScript). With JavaScript they open a native
+<dialog> describing the service. showModal() makes the
+rest of the page inert; we add a focus loop, Escape and
+click-outside closing, a closing animation, and return
+focus to the pill that opened it.
+*/
+
+(function() {
+
+  const modal = document.getElementById("serviceModal");
+
+  if (!modal || typeof modal.showModal !== "function") return;
+
+  const panels = modal.querySelectorAll(".modal-panel");
+  const closeButton = modal.querySelector(".modal-close");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let opener = null;
+  let closing = false;
+
+  function focusables() {
+    return Array.from(
+      modal.querySelectorAll('a[href], button:not([disabled])')
+    ).filter(function(el) {
+      return !el.closest("[hidden]");
+    });
+  }
+
+  function open(key, trigger) {
+    let found = false;
+
+    panels.forEach(function(panel) {
+      const match = panel.dataset.panel === key;
+      panel.hidden = !match;
+      if (match) found = true;
+    });
+
+    if (!found) return false;
+
+    opener = trigger;
+    modal.setAttribute("aria-labelledby", "modal-title-" + key);
+    modal.setAttribute("aria-describedby", "modal-desc-" + key);
+    modal.classList.remove("is-closing");
+    modal.showModal();
+    modal.querySelector(".modal-body").scrollTop = 0;
+    closeButton.focus();
+    return true;
+  }
+
+  function finishClose() {
+    modal.classList.remove("is-closing");
+    modal.close();
+    closing = false;
+  }
+
+  function close() {
+    if (!modal.open || closing) return;
+
+    if (reduceMotion.matches) {
+      finishClose();
+      return;
+    }
+
+    closing = true;
+    modal.classList.add("is-closing");
+
+    let done = false;
+    const end = function() {
+      if (done) return;
+      done = true;
+      finishClose();
+    };
+
+    modal.addEventListener("animationend", end, { once: true });
+    setTimeout(end, 300);
+  }
+
+  // Open from the hero pills
+  document.querySelectorAll(".pill[data-service]").forEach(function(pill) {
+    pill.setAttribute("aria-haspopup", "dialog");
+    pill.setAttribute("aria-controls", "serviceModal");
+
+    pill.addEventListener("click", function(event) {
+      if (open(pill.dataset.service, pill)) event.preventDefault();
+    });
+  });
+
+  closeButton.addEventListener("click", close);
+
+  // Escape: animate out instead of the instant native close
+  modal.addEventListener("cancel", function(event) {
+    event.preventDefault();
+    close();
+  });
+
+  // Click on the backdrop (outside the panel) closes
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) close();
+  });
+
+  // Keep Tab / Shift+Tab inside the dialog
+  modal.addEventListener("keydown", function(event) {
+    if (event.key !== "Tab") return;
+
+    const items = focusables();
+    if (!items.length) return;
+
+    const first = items[0];
+    const last = items[items.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Return focus to the pill that opened the dialog
+  modal.addEventListener("close", function() {
+    if (opener && document.contains(opener)) {
+      opener.focus({ preventScroll: true });
+    }
+  });
+
+  // "Book Appointment": preselect the matching service, then go to the form
+  modal.querySelectorAll("[data-book]").forEach(function(link) {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      const select = document.getElementById("service");
+      const option = Array.from(select.options).find(function(o) {
+        return o.value === link.dataset.book;
+      });
+
+      if (option) {
+        select.value = option.value;
+        select.dispatchEvent(new Event("change"));
+      }
+
+      opener = select;
+      finishClose();
+      document.getElementById("appointment").scrollIntoView({
+        behavior: reduceMotion.matches ? "auto" : "smooth"
+      });
+    });
+  });
+
+  // "Ask on WhatsApp": prefill the enquiry with the service name
+  modal.querySelectorAll("[data-whatsapp]").forEach(function(link) {
+    link.href =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(
+        "Hello SysLab Diagnostics,\n\nI would like more information about: " +
+        link.dataset.whatsapp +
+        ".\n\nThank you."
+      );
+  });
+})();

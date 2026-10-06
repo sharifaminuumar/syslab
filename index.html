@@ -175,10 +175,10 @@
       </div>
 
       <ul class="pills" aria-label="Popular services">
-        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Hematology &amp; clinical chemistry</a></li>
-        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg>Obstetric ultrasound</a></li>
-        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg>PCR for paternity dispute</a></li>
-        <li><a class="pill" href="#services"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Corporate screening</a></li>
+        <li><a class="pill" href="#services" data-service="hematology"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Hematology &amp; clinical chemistry</a></li>
+        <li><a class="pill" href="#services" data-service="obstetric"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg>Obstetric ultrasound</a></li>
+        <li><a class="pill" href="#services" data-service="paternity"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg>PCR for paternity dispute</a></li>
+        <li><a class="pill" href="#services" data-service="corporate"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Corporate screening</a></li>
       </ul>
 
     </div>
@@ -931,6 +931,135 @@
 
 </footer>
 
+
+<!-- ==================================================
+     SERVICE DETAIL MODAL (opened from the hero pills)
+================================================== -->
+
+<dialog class="service-modal" id="serviceModal">
+  <div class="modal-body">
+
+    <button class="modal-close" type="button" aria-label="Close">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+
+      <section class="modal-panel" data-panel="hematology" hidden>
+        <header class="modal-head">
+          <span class="modal-icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>
+          <div>
+            <p class="eyebrow">Laboratory</p>
+            <h2 id="modal-title-hematology">Hematology &amp; Clinical Chemistry</h2>
+          </div>
+        </header>
+        <p class="modal-lead" id="modal-desc-hematology">Routine blood tests that check how your body and organs are working, helping detect disease early and monitor ongoing conditions.</p>
+        <h3 class="modal-subhead">What's included</h3>
+        <ul class="modal-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Comprehensive blood counts (CBC)</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Lipid profiles</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Liver and kidney function panels</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Blood glucose monitoring</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Routine organ wellness checks for early disease detection</span></li>
+        </ul>
+        <div class="modal-actions">
+          <a class="btn btn-primary" href="#appointment" data-book="Laboratory Services">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            Book Appointment
+          </a>
+          <a class="btn btn-secondary" href="https://wa.me/233209600738" target="_blank" rel="noopener" data-whatsapp="Hematology &amp; Clinical Chemistry">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section class="modal-panel" data-panel="obstetric" hidden>
+        <header class="modal-head">
+          <span class="modal-icon"><svg class="icon" aria-hidden="true"><use href="#i-ultrasound"/></svg></span>
+          <div>
+            <p class="eyebrow">Imaging</p>
+            <h2 id="modal-title-obstetric">Obstetric Ultrasound</h2>
+          </div>
+        </header>
+        <p class="modal-lead" id="modal-desc-obstetric">Real-time ultrasound imaging during pregnancy to follow your baby’s development and support the health of mother and child.</p>
+        <h3 class="modal-subhead">What's included</h3>
+        <ul class="modal-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>High-resolution real-time fetal imaging</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Anatomical scans</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Gestational age determination</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Growth tracking</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Maternal-fetal well-being assessments</span></li>
+        </ul>
+        <div class="modal-actions">
+          <a class="btn btn-primary" href="#appointment" data-book="Ultrasonography / Imaging">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            Book Appointment
+          </a>
+          <a class="btn btn-secondary" href="https://wa.me/233209600738" target="_blank" rel="noopener" data-whatsapp="Obstetric Ultrasound">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section class="modal-panel" data-panel="paternity" hidden>
+        <header class="modal-head">
+          <span class="modal-icon"><svg class="icon" aria-hidden="true"><use href="#i-tubes"/></svg></span>
+          <div>
+            <p class="eyebrow">Laboratory</p>
+            <h2 id="modal-title-paternity">PCR for Paternity Dispute</h2>
+          </div>
+        </header>
+        <p class="modal-lead" id="modal-desc-paternity">Highly accurate DNA profiling for confidential peace-of-mind testing or legal dispute resolution.</p>
+        <h3 class="modal-subhead">What's included</h3>
+        <ul class="modal-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>DNA profiling by PCR</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Confidential peace-of-mind testing</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Testing to support legal dispute resolution</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Strict chain-of-custody sample handling</span></li>
+        </ul>
+          <p class="modal-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Samples and results are handled confidentially under strict chain-of-custody protocols.</span></p>
+        <div class="modal-actions">
+          <a class="btn btn-primary" href="#appointment" data-book="Laboratory Services">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            Book Appointment
+          </a>
+          <a class="btn btn-secondary" href="https://wa.me/233209600738" target="_blank" rel="noopener" data-whatsapp="PCR for Paternity Dispute">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section class="modal-panel" data-panel="corporate" hidden>
+        <header class="modal-head">
+          <span class="modal-icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+          <div>
+            <p class="eyebrow">Corporate health</p>
+            <h2 id="modal-title-corporate">Corporate Screening</h2>
+          </div>
+        </header>
+        <p class="modal-lead" id="modal-desc-corporate">Health screening tailored to your organisation, from new hires to leadership teams and the wider workforce.</p>
+        <h3 class="modal-subhead">What's included</h3>
+        <ul class="modal-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Pre-employment medical examinations</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Annual executive health audits</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>On-site workforce wellness campaigns</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Occupational health reports</span></li>
+        </ul>
+        <div class="modal-actions">
+          <a class="btn btn-primary" href="#appointment" data-book="Health Package">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+            Book Appointment
+          </a>
+          <a class="btn btn-secondary" href="https://wa.me/233209600738" target="_blank" rel="noopener" data-whatsapp="Corporate Screening">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </section>
+
+  </div>
+</dialog>
 
 <script src="js/main.js" defer></script>
 
