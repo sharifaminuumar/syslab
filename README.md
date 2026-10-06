@@ -68,8 +68,11 @@ Every request goes straight to the clinic's WhatsApp, so no back-end, database o
 - **Responsive layout.** Fluid type and spacing, CSS Grid layouts that reflow from three columns to one, and a mobile menu on screens of 1040px and narrower. Tested at 1440px and 390px with no horizontal scrolling.
 - **Native dark mode.** A complete second set of colour tokens follows the visitor's system setting automatically, with no toggle to manage.
 - **Brand presence.** The SLD logo appears in the navigation, hero card and footer, and as the favicon and Apple touch icon.
-- **Clinical photography.** Six self-hosted photos: the hero card, the Laboratory Services, Ultrasonography and Health Packages cards, and a two-photo About grid. Each is served in three sizes, so phones download only what they need (16–101 KB per file).
+- **Clinical photography.** Six self-hosted photos: the hero card, the Laboratory Services, Ultrasonography and Patient Support cards, and a two-photo About grid. Each is served in three sizes, so phones download only what they need (16–101 KB per file).
 - **Ambient hero background.** Slow-drifting colour fields in the brand palette give the hero a quiet sense of life. The motion respects reduced-motion settings, can be paused, and stops while off screen.
+- **Service detail popups.** The four quick-link pills under the hero headline open an accessible popup with a summary, a "What's included" checklist and two actions.
+  - **Book Appointment** jumps to the form with the matching service already selected.
+  - **Ask on WhatsApp** opens a message that names the service.
 - **About section and Equipment & Supplies catalogue.** An About SysLab section introduces the hub. A catalogue describes every equipment, reagent and consumable category by clinical use, without brand names or model numbers.
 
 ---
@@ -84,6 +87,7 @@ The interface follows Apple's Human Interface Guidelines. Each principle below m
 | **44px minimum touch targets** | Every button, nav link, the logo link and the menu toggle is at least 44 × 44 px; mobile menu rows are 48px. |
 | **WCAG AA contrast** | Body and secondary text are at least 4.5:1 on their backgrounds. WhatsApp actions use `#0e7a43` (**5.4:1** with white text) instead of stock `#25d366` (about 2:1, which fails). The primary red `#b91c1c` is about 6.5:1. |
 | **Reduced motion** | Hero background animation is declared only inside `@media (prefers-reduced-motion: no-preference)`, so reduced-motion visitors see a static composition and no pause button. That setting also removes transitions, hover lifts, scroll reveals and smooth scrolling. |
+| **Accessible popups** | The service popup is a native `<dialog>` opened with `showModal()`, so the rest of the page is inert. Escape or a click outside closes it, Tab cycles only inside it, and focus returns to the pill that opened it. Each popup is announced by its own title and summary. The 44px close button and the blurred backdrop follow the site's glass style, and the backdrop turns opaque under `prefers-reduced-transparency`. |
 | **Pausable ambient motion** | A 44px pause/play button (WCAG 2.2.2) stops the hero background, remembers the choice per visitor, and announces "Pause/Play background animation" to screen readers. The animation also pauses automatically while the hero is off screen. |
 | **Reduced transparency & increased contrast** | `prefers-reduced-transparency` makes the navbar opaque, and so does a browser without `backdrop-filter`. `prefers-contrast: more` strengthens borders and secondary text. |
 | **SF-style vector icons** | An inline SVG sprite of 32 line icons (1.75 stroke, rounded caps and joins) replaces emoji, so icons look the same on every device and scale sharply. |
@@ -92,6 +96,20 @@ The interface follows Apple's Human Interface Guidelines. Each principle below m
 | **Semantic, assistive-friendly HTML** | Landmarks, a skip link, labelled sections, and an associated `<label>` for every field. `aria-invalid` and `aria-describedby` carry error text, `aria-expanded` is set on the menu, `aria-current` marks the active section, and `role="status"` announces form messages. |
 | **Motion** | 200ms `cubic-bezier(0.2, 0.8, 0.2, 1)` transitions, press scaling on buttons and a visible focus ring for keyboard users. |
 | **Photography** | Photos are fixed-shape boxes (`aspect-ratio`) with `object-fit: cover` and 14–20px rounded corners, so the page doesn't shift as they load. Each has descriptive alt text. They fade in on load and are dimmed slightly in dark mode. |
+
+### Service detail popups
+
+| Pill | Popup | "Book Appointment" selects |
+| --- | --- | --- |
+| Hematology & clinical chemistry | CBC, lipid profiles, liver and kidney panels, blood glucose, organ wellness checks | Laboratory Services |
+| Obstetric ultrasound | Real-time fetal imaging, anatomical scans, gestational age, growth tracking, maternal-fetal well-being | Ultrasonography / Imaging |
+| PCR for paternity dispute | DNA profiling for peace-of-mind or legal cases, with a chain-of-custody note | Laboratory Services |
+| Corporate screening | Pre-employment exams, executive health audits, on-site wellness campaigns, occupational health reports | Health Package |
+
+- **On desktop** the popup is a centred card. **On phones** (560px and narrower) it slides up from the bottom like an iOS sheet and scrolls if the content is long.
+- **Motion:** the fade and scale (or the slide-up) runs only under `prefers-reduced-motion: no-preference`; otherwise the popup opens and closes instantly.
+- **Without JavaScript,** the pills stay plain links to the Services section.
+- **Contrast:** every text element in the popup passes WCAG AA; the lowest is 5.62:1 in dark mode and 6.47:1 in light.
 
 ### Hero ambient background
 
@@ -131,7 +149,7 @@ syslab/
 │       ├── hero-microscope-{640,960,1280}.jpg
 │       ├── service-lab-{480,800,1200}.jpg
 │       ├── service-ultrasound-{480,800,1200}.jpg
-│       ├── service-wellness-{480,800,1200}.jpg
+│       ├── service-support-{480,800,1200}.jpg
 │       ├── about-pipette-{640,960,1440}.jpg
 │       └── about-bench-{640,960,1440}.jpg
 └── README.md
@@ -146,6 +164,7 @@ syslab/
 | Colours, radii, shadows, motion | The `:root` tokens at the top of `css/styles.css`, with dark-mode overrides directly below |
 | Services, appointment times, form options | `index.html` |
 | Photos | `assets/photos/`, referenced by `<img srcset>` in `index.html` |
+| Service popup content | The `<dialog id="serviceModal">` panels near the end of `index.html`; behaviour is in the "SERVICE DETAIL MODAL" block of `js/main.js` |
 | Hero animation | The "HERO AMBIENT BACKGROUND" block in `css/styles.css`; the pause control is at the end of `js/main.js` |
 
 All paths are relative, so the site works at a domain root or in a sub-folder such as `/syslab/`.
@@ -306,6 +325,11 @@ After this, `https://sharifaminuumar.github.io/syslab/` redirects to the custom 
 
 - **Changing the WhatsApp number:** edit `WHATSAPP_NUMBER` in `js/main.js`, then search `index.html` for `233209600738` and update the visible numbers and `wa.me` links.
 - **Adding a service:** copy an existing `<article class="service-card">` block in `index.html`. To add a new icon, add a `<symbol>` to the sprite at the top of the page and reference it with `<use href="#i-your-icon">`.
+- **Editing a popup:** change the matching `<section class="modal-panel" data-panel="…">` in `index.html`. To add a popup:
+  1. Copy a panel and give it a new `data-panel` key.
+  2. Give its title and summary the ids `modal-title-<key>` and `modal-desc-<key>`.
+  3. Add `data-service="<key>"` to the pill that should open it.
+  4. Set its Book button's `data-book` to an option that exists in the appointment form's Service list.
 - **Adding a form option:** add an `<option>` to the relevant `<select>` in `index.html`. Its text appears in the WhatsApp message as written.
 - **Replacing a photo:**
   1. Export the new image in the same proportions as the one it replaces: hero 16:10, service cards 16:9, About grid 3:2.
