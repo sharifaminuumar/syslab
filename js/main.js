@@ -444,3 +444,28 @@ if ("IntersectionObserver" in window) {
     revealObserver.observe(el);
   });
 }
+
+
+/*
+======================================================
+PHOTOS
+======================================================
+
+Fade photos in once loaded; if one fails, keep the
+branded placeholder instead of a broken image.
+*/
+
+document.querySelectorAll(".photo img").forEach(function(img) {
+
+  const figure = img.closest(".photo");
+
+  function loaded() { figure.classList.add("is-loaded"); }
+  function failed() { figure.classList.add("is-broken"); }
+
+  if (img.complete) {
+    if (img.naturalWidth > 0) { loaded(); } else { failed(); }
+  } else {
+    img.addEventListener("load", loaded, { once: true });
+    img.addEventListener("error", failed, { once: true });
+  }
+});

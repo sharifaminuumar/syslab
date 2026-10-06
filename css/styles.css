@@ -1259,6 +1259,203 @@ form .btn-block { margin-top: 24px; }
 
 
 /* =========================
+   PHOTOGRAPHY
+========================== */
+
+.photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 20px;
+  aspect-ratio: 3 / 2;
+  /* Branded placeholder shown while loading or if an image fails */
+  background:
+    radial-gradient(70% 80% at 80% 10%, rgba(16, 185, 129, 0.28), transparent 70%),
+    linear-gradient(135deg, var(--brand-soft-2), var(--brand-soft));
+}
+
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23047857' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6'/%3E%3Cpath d='M10 3v6.2L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.2V3'/%3E%3Cpath d='M7.5 15h9'/%3E%3C/svg%3E") center / 56px no-repeat;
+  opacity: 0.45;
+}
+
+/* Hairline edge so photos sit cleanly on any surface */
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+  pointer-events: none;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 400ms var(--ease),
+    transform 600ms var(--ease);
+}
+
+.js .photo img { opacity: 0; }
+.js .photo.is-loaded img { opacity: 1; }
+.photo.is-broken img { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  .photo img { filter: brightness(0.92) saturate(0.95); }
+  .photo::after { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
+}
+
+/* Hero card photo */
+.photo-hero {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 22px;
+  border-radius: 18px;
+}
+
+.photo-chip {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 9px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--brand-ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 6px 16px -6px rgba(15, 23, 42, 0.3);
+}
+
+.photo-chip .icon { width: 16px; height: 16px; }
+
+/* Service card banners */
+.photo-service {
+  aspect-ratio: 16 / 9;
+  margin: -12px -12px 22px;
+  border-radius: 14px;
+}
+
+.service-card-media:hover .photo img { transform: scale(1.04); }
+
+/* About / facility */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: end;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.about-heading {
+  margin: 0;
+  text-align: left;
+}
+
+.about-points {
+  display: grid;
+  gap: 14px;
+}
+
+.about-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.about-points strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.about-points small {
+  display: block;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(180px, 19vw, 260px);
+  gap: 16px;
+}
+
+.gallery-item {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.gallery-lead {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.gallery-wide { grid-column: 3 / 5; }
+
+.gallery-item figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 3;
+  padding: 40px 18px 16px;
+  background: linear-gradient(to top, rgba(2, 20, 15, 0.72), rgba(2, 20, 15, 0));
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.gallery-item:hover img { transform: scale(1.03); }
+
+.photo-note {
+  margin-top: 14px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  text-align: right;
+}
+
+@media (max-width: 1040px) {
+  .about-intro { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .gallery {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .gallery-item { aspect-ratio: 1 / 1; height: auto; }
+
+  .gallery-lead,
+  .gallery-wide {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-media:hover .photo img,
+  .gallery-item:hover img { transform: none; }
+}
+
+
+/* =========================
    REVEAL ON SCROLL (progressive)
 ========================== */
 
