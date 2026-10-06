@@ -358,6 +358,23 @@ img, svg { display: block; }
   flex-shrink: 0;
 }
 
+/* Logo artwork sits on white, so it always gets a white tile */
+.brand-logo,
+.hero-card-logo,
+.footer-logo {
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #fff;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  padding: 3px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -530,7 +547,33 @@ img, svg { display: block; }
 .hero-card-head {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+}
+
+.hero-card-logo {
+  width: 72px;
+  height: 72px;
+  padding: 6px;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px var(--border), var(--shadow);
+}
+
+.hero-card-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  color: var(--brand-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-card-kicker .status-dot {
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
 }
 
 .hero-card h2 {
@@ -1163,7 +1206,22 @@ form .btn-block { margin-top: 24px; }
   align-items: flex-start;
 }
 
-.footer-brand .brand-mark { width: 40px; height: 40px; }
+.footer-logo {
+  width: 88px;
+  height: 88px;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.footer-brand { align-items: center; }
+
+.footer-tagline {
+  color: #6ee7b7 !important;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
 .footer-name {
   color: #fff;
