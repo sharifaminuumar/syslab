@@ -162,8 +162,8 @@ syslab/
 │       ├── service-ultrasound-{480,800,1200}.jpg
 │       ├── service-support-{480,800,1200}.jpg
 │       ├── service-wellness-{480,800,1200}.jpg
-│       ├── service-consultancy-{480,800,1200}.jpg
-│       ├── service-corporate-{480,800,1200}.jpg
+│       ├── service-african-consultancy-{480,800,1200}.jpg
+│       ├── service-african-corporate-{480,800,1200}.jpg
 │       ├── about-pipette-{640,960,1440}.jpg
 │       └── about-bench-{640,960,1440}.jpg
 └── README.md
