@@ -362,6 +362,6 @@ After this, `https://sharifaminuumar.github.io/syslab/` redirects to the custom 
 | --- | --- |
 | **WhatsApp** | [+233 209600738](https://wa.me/233209600738) |
 | **Email** | [ricus74@yahoo.com](mailto:ricus74@yahoo.com) |
-| **Location** | Katamanso Amrahia Road |
+| **Location** | [Katamanso Amrahia Road](https://maps.app.goo.gl/xh2K4GGiJsVThUfa9) |
 
 <p align="center"><sub>© 2026 SysLab Diagnostics. All rights reserved.</sub></p>
