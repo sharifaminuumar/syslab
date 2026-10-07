@@ -159,9 +159,9 @@ syslab/
 │   └── photos/         # Optimised JPEGs, three widths each
 │       ├── hero-microscope-{640,960,1280}.jpg
 │       ├── service-lab-{480,800,1200}.jpg
-│       ├── service-ultrasound-{480,800,1200}.jpg
-│       ├── service-support-{480,800,1200}.jpg
-│       ├── service-wellness-{480,800,1200}.jpg
+│       ├── service-african-ultrasound-{480,800,1200}.jpg
+│       ├── service-african-support-{480,800,1200}.jpg
+│       ├── service-african-wellness-{480,800,1170}.jpg
 │       ├── service-african-consultancy-{480,800,1200}.jpg
 │       ├── service-african-corporate-{480,800,1200}.jpg
 │       ├── about-pipette-{640,960,1440}.jpg
