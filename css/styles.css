@@ -1933,6 +1933,50 @@ html:has(.service-modal[open]) { overflow: hidden; }
 
 .modal-actions .btn { flex: 1 1 200px; }
 
+/* "View details" on service cards (shown only when the popup can open) */
+.card-link {
+  display: none;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin: 14px 0 -8px -12px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brand-ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.js .card-link { display: inline-flex; }
+.card-link .icon { width: 18px; height: 18px; transition: transform var(--dur) var(--ease); }
+.card-link:hover { background: var(--brand-soft); }
+.card-link:hover .icon { transform: translateX(3px); }
+.card-link:active { transform: scale(0.97); transition-duration: 80ms; }
+.card-link:focus-visible { outline: none; box-shadow: var(--focus); }
+
+/* Two-line checklist items in the popups */
+.modal-list li strong {
+  display: block;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.modal-list li small {
+  display: block;
+  margin-top: 1px;
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
 /* Phones: present as a bottom sheet */
 @media (max-width: 560px) {
   .service-modal {

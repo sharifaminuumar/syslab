@@ -70,7 +70,7 @@ Every request goes straight to the clinic's WhatsApp, so no back-end, database o
 - **Brand presence.** The SLD logo appears in the navigation, hero card and footer, and as the favicon and Apple touch icon.
 - **Clinical photography.** Nine self-hosted photos: the hero card, all six service cards, and a two-photo About grid. Each is served in three sizes, so phones download only what they need (16–101 KB per file).
 - **Ambient hero background.** Slow-drifting colour fields in the brand palette give the hero a quiet sense of life. The motion respects reduced-motion settings, can be paused, and stops while off screen.
-- **Service detail popups.** The four quick-link pills under the hero headline open an accessible popup with a summary, a "What's included" checklist and two actions.
+- **Service detail popups.** The four quick-link pills under the hero headline, and a **View details** button on each of the six service cards, open an accessible popup with a summary, a "What's included" checklist and two actions.
   - **Book Appointment** jumps to the form with the matching service already selected.
   - **Ask on WhatsApp** opens a message that names the service.
 - **About section and Equipment & Supplies catalogue.** An About SysLab section introduces the hub. A catalogue describes every equipment, reagent and consumable category by clinical use, without brand names or model numbers.
@@ -106,9 +106,20 @@ The interface follows Apple's Human Interface Guidelines. Each principle below m
 | PCR for paternity dispute | DNA profiling for peace-of-mind or legal cases, with a chain-of-custody note | Laboratory Services |
 | Corporate screening | Pre-employment exams, executive health audits, on-site wellness campaigns, occupational health reports | Health Package |
 
+**Service card popups:** each **View details** button opens a popup built from that card's own description and list, with a short plain-language line for each item.
+
+| Card | "Book Appointment" selects |
+| --- | --- |
+| Laboratory Services | Laboratory Services |
+| Ultrasonography / Imaging | Ultrasonography / Imaging |
+| Health Packages | Health Package |
+| Patient Support | Patient Support |
+| Laboratory Consultancy | Laboratory Consultancy |
+| Corporate Health Services | Health Package |
+
 - **On desktop** the popup is a centred card. **On phones** (560px and narrower) it slides up from the bottom like an iOS sheet and scrolls if the content is long.
 - **Motion:** the fade and scale (or the slide-up) runs only under `prefers-reduced-motion: no-preference`; otherwise the popup opens and closes instantly.
-- **Without JavaScript,** the pills stay plain links to the Services section.
+- **Without JavaScript,** the pills stay plain links to the Services section, and the **View details** buttons are hidden.
 - **Contrast:** every text element in the popup passes WCAG AA; the lowest is 5.62:1 in dark mode and 6.47:1 in light.
 
 ### Hero ambient background
@@ -331,7 +342,7 @@ After this, `https://sharifaminuumar.github.io/syslab/` redirects to the custom 
 - **Editing a popup:** change the matching `<section class="modal-panel" data-panel="…">` in `index.html`. To add a popup:
   1. Copy a panel and give it a new `data-panel` key.
   2. Give its title and summary the ids `modal-title-<key>` and `modal-desc-<key>`.
-  3. Add `data-service="<key>"` to the pill that should open it.
+  3. Add `data-service="<key>"` to the pill or button that should open it.
   4. Set its Book button's `data-book` to an option that exists in the appointment form's Service list.
 - **Adding a form option:** add an `<option>` to the relevant `<select>` in `index.html`. Its text appears in the WhatsApp message as written.
 - **Replacing a photo:**

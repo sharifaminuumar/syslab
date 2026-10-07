@@ -596,13 +596,13 @@ focus to the pill that opened it.
     setTimeout(end, 300);
   }
 
-  // Open from the hero pills
-  document.querySelectorAll(".pill[data-service]").forEach(function(pill) {
-    pill.setAttribute("aria-haspopup", "dialog");
-    pill.setAttribute("aria-controls", "serviceModal");
+  // Open from the hero pills and the service cards' "View details" buttons
+  document.querySelectorAll("[data-service]").forEach(function(trigger) {
+    trigger.setAttribute("aria-haspopup", "dialog");
+    trigger.setAttribute("aria-controls", "serviceModal");
 
-    pill.addEventListener("click", function(event) {
-      if (open(pill.dataset.service, pill)) event.preventDefault();
+    trigger.addEventListener("click", function(event) {
+      if (open(trigger.dataset.service, trigger)) event.preventDefault();
     });
   });
 
